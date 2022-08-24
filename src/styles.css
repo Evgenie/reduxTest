@@ -1,0 +1,55 @@
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.button_wrap {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.decrement,
+.increment {
+	display: inline-block;
+	height: 50px;
+	width: 150px;
+	background-color: #000000;
+	color: aqua;
+	text-transform: uppercase;
+}
+
+.decrement,
+.increment:hover {
+	cursor: pointer;
+}
+
+.count {
+	margin: 50px;
+	font-size: 70px;
+}
+
+.toDoWrap {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	height: 50vw;
+	margin: 50px;
+	font-size: 30px;
+}
+.input_toDo {
+	height: 50px;
+	line-height: 90%;
+	padding-left: 20px;
+	font-size: 30px;
+}
+
+.toDo {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	border: 1px solid #000000;
+	padding-left: 20px;
+}
+.toDo:hover {
+	cursor: pointer;
+}
