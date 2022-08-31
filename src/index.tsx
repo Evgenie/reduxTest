@@ -1,28 +1,13 @@
 import React from "react";
-import * as ReactDOMClient from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
 
-import App from "./App";
-import { data } from "./data";
+import App from "./epics/App/App";
+import { store } from "./store/store";
 
-const addToDo = { type: "ADD_TODO", payload: "" };
-
-const reducer = (state = data, action = addToDo) => {
-	switch (action.type) {
-		case "ADD_TODO":
-			return { ...state, action };
-		case "DEL_TODO":
-			return { ...state, state };
-		default:
-			return state;
-	}
-};
-
-const store = createStore(reducer);
-const rootElement = document.getElementById("root");
-const root = ReactDOMClient.createRoot(rootElement);
-
+const container = document.getElementById("root");
+if (!container) throw new Error("Failed to find the root element");
+const root = createRoot(container);
 root.render(
 	<Provider store={store}>
 		<App />
